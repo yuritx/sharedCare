@@ -9,7 +9,7 @@
 			private $horarioMedicamento;
 			private $alimentos;
 			private $horarioAlimento;
-			private $datasConsultas;
+			private $consultas;
 			private $alergias;
 			
 			
