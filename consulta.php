@@ -1,5 +1,5 @@
 <?php
-    
+     rfgrf
     class Consulta{
       
       private $data;
