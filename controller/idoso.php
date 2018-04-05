@@ -9,6 +9,7 @@
 			private $horarioMedicamento;
 			private $alimentos;
 			private $horarioAlimento;
+			private $refeicao;
 			private $consultas;
 			private $alergias;
 			private $registro;
@@ -49,15 +50,24 @@
 			}
 			
 			function tomarMedicamento($medicamento, $horario){
-				
+							
 			}
 			
 			function refeicao($alimento, $horario){
-				
+				$alimentos=sizeof($this->alimentos);
+				$aux=0;		
+				while($aux<$alimentos){
+					if($this->alimentos[0] == $alimento){
+				        	if(refeicao[$aux] == false){
+							refeicao[$aux]=true;
+							$this->horarioAlimento[$aux] = $horario;
+						}
+					}
+				}
 			}
 			
 			function consultar($data){
-				
+					
 			}
 			
 			
