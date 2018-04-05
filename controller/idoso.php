@@ -17,29 +17,29 @@
 						
 			
 			function Idoso($informacoes){
-			
+				
 			}
 			
 			function getIdade(){
-				
+				return $this->idade;
 			}
 			
 			function getNome(){
-				
+				return $this->nome;
 			}
 			
 			function getMedicamentos(){
-				
+				return $this->medicamentos;
 			}
 			
 			function getAlimentos(){
-				
+				return $this->Alimentos;
 			}
 			function getConsultas(){
-				
+				return $this->consultas;
 			}
 			function getAlergias(){
-				
+				return $this->alergias
 			}
 			
 			function getProximoMedicamento(){
@@ -61,8 +61,11 @@
 				        	if(refeicao[$aux] == false){
 							refeicao[$aux]=true;
 							$this->horarioAlimento[$aux] = $horario;
+							return "correta";
 						}
+						return "feita";
 					}
+					return "false";
 				}
 			}
 			
