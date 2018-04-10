@@ -1,0 +1,7 @@
+
+<html>
+	<?php
+	
+	header(sharecare.com.br/castrocuidador.php);
+	?>
+</html>
