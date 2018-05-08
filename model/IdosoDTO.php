@@ -2,7 +2,7 @@
 <?php
 	
 //CLASSE DTO DE BUSCA E INSERÇÃO DE IDOSOS NO BANCO
-	class IdososDTO{
+	class IdosoDTO{
 
 		public function getIdoso($registro){
 			try{
@@ -11,11 +11,12 @@
 			echo $e -> getMessage();	
 		}
 				
-		$buscarInformacao = $pdo->prepare("SELECT  resgistro_idoso, idade_idoso, nome_idoso, 
+		$buscarInformacao = $pdo->prepare("SELECT  registro_idoso, nome_idoso, data_nascimento_idoso, doenca_principal 
 											FROM idosos WHERE registro_idoso=:registro");
-		$buscarInformacao-> bindValue(":registro", $registro, PDO:: PARAM_STR); 
+		$buscarInformacao-> bindValue(":registro", $registro, PDO:: PARAM_INT); 
 		$buscarInformacao -> execute();
 		$resultado = $buscarInformacao -> fetchAll(PDO::FETCH_OBJ);
+		
 				
 			return $resultado;
 		}
@@ -33,21 +34,7 @@
 			return $resultado;
 		}	
 	
-		//BUSCA POR OUTRO PARAMETRO
-		public function get??($??){
-			try{
-			$pdo =new PDO("mysql:host=localhost;dbname=bd_fgf","root","");
-		} catch(PDOException $e){
-			echo $e -> getMessage();	
-		}
-				
-		$buscarInformacao = $pdo->prepare("SELECT * FROM idosos WHERE ??_atual=:??");
-		$buscarInformacao-> bindValue(":??", $??, PDO:: PARAM_INT); 
-		$buscarInformacao -> execute();
-		$resultado = $buscarInformacao -> fetchAll(PDO::FETCH_OBJ);
-				
-			return $resultado;
-		}	
+		
 		
 		public function inserirIdoso($idoso){
 			try{
@@ -82,9 +69,7 @@
 		$inserir-> bindValue(":registro_idoso", $registroIdoso, PDO:: PARAM_INT); 
 		$inserir-> bindValue(":idAlergia", $idAlergia, PDO:: PARAM_INT); 
 		$inserir-> execute();
+		}
 	}
-
 ?>
 
-
-</html>
