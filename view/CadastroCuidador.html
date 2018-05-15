@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Checkout example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    --<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+      
+        <h2>Shared Care</h2>
+        <p class="lead"> bem vindo a maior comunidade de cuidadores do Brasil, prencha as informações abaixo para começar a utilizar o Shared Care.</p>
+      </div>
+
+      <div class="row">
+      
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Novo Cuidador</h4>
+          <form class="needs-validation" action="/sharedCare/controller/CadastroCuidadorController.php" method="post" novalidate >
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                 Digite seu nome.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Sobrenome</label>
+                <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Digite seu sobrenome.
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" required>
+              <div class="invalid-feedback">
+                Email inválido.
+              </div>
+            </div>
+			 
+			 <div class="row">
+			  <div class="col-md-6 mb-3">
+              <label for="senha">Senha</label>
+              <input type="password" class="form-control" name="senha" id="senha"  maxlength="8" required>
+              <div class="invalid-feedback">
+                Senha inválida.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="CPF">CPF</label>
+              <input type="text" class="form-control" name="cpf" id="cpf"  maxlength="11" required>
+              <div class="invalid-feedback">
+                CPF inválido.
+              </div>
+            </div>
+			</div>
+            
+              <div class="col-md-4 mb-3"">
+                <label for="data">data Nascimento</label>
+               <input type="date" id="nascimento" name="nascimento" max="2000-01-01" min="1950-01-01"  required>
+				<div class="invalid-feedback">
+                 Selecione sua data de nascimento.
+                </div>
+              </div>
+          
+            
+            
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="same-address" required>
+              <label class="custom-control-label" for="same-address">Aceito os Termos e Condições do SharedCare</label>
+            </div>
+            
+                 
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Concluir Cadastro</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 Shared Care</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+	
+	  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+  </body>
+</html>

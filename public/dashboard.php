@@ -11,10 +11,10 @@
 
     <!-- Bootstrap core CSS -->
 	
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
+	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -163,7 +163,7 @@
               <tbody>
                 <tr>
 				<?php  
-					require './sharedCare/model/IdosoDTO.php';
+					require '../model/IdosoDTO.php';
 					$count = 0;
 					$aux = new IdosoDTO;
 					$listaIdosos = $aux -> getIdoso(1);
