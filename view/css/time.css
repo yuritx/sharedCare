@@ -26,8 +26,9 @@
   position: relative;
   transition: all 200ms ease-in;
 }
-.status h4 {
+.status h6 {
   font-weight: 600;
+ margin-top: 15px;
 }
 .status:before {
   content: "";
@@ -50,8 +51,9 @@
   border: none;
   transition: all 200ms ease-in;
 }
-.li.complete .status h4 {
+.li.complete .status h6 {
   color: #66DC71;
+  margin-top: 15px;
 }
 
 @media (min-device-width: 320px) and (max-device-width: 700px) {
@@ -104,6 +106,3 @@ button {
   top: 20px;
   background-color: #75C7F6;
 }
-
-
-

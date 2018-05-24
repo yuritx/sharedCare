@@ -1,23 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>SharedCare Dashboard</title>
+      <title>SharedCare Dashboard</title>
 
     <!-- Bootstrap core CSS -->
 	
-	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
-	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../view/css/reset.css"> <!-- CSS reset -->
+	
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/time.css"> 
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
   </head>
 
   <body>
@@ -116,38 +112,61 @@
                   
 		   <!-- Bootstrap core JavaScript
     ================================================== -->
-    <section class="cd-horizontal-timeline">
-	<div class="timeline">
-		<div class="events-wrapper">
-			<div class="events">
-				<ol>
-					<li><a href="#0" data-date="16/01/2014" class="selected">8h</a></li>
-					<li><a href="#0" data-date="28/02/2014">10h</a></li>
-					<li><a href="#0" data-date="20/04/2014">12h</a></li>
-					<li><a href="#0" data-date="20/05/2014">16h</a></li>
-					<li><a href="#0" data-date="09/07/2014">18h</a></li>
-					<li><a href="#0" data-date="30/08/2014">22h</a></li>
-					
-				</ol>
+    
+	
+	
+		
 
-				<span class="filling-line" aria-hidden="true"></span>
-			</div> <!-- .events -->
-		</div> <!-- .events-wrapper -->
+	
+
+<ul class="timeline" id="timeline">
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Abhi Sharma</span>
+      <span class="date">11/15/2014<span>
+    </div>
+    <div class="status">
+      <h6> Shift Created </h6>
+    </div>
+  </li>
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">PAM Admin</span>
+      <span class="date">11/15/2014<span>
+    </div>
+    <div class="status">
+      <h6> Email Sent </h6>
+    </div>
+  </li>
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Aaron Rodgers</span>
+      <span class="date">11/15/2014<span>
+    </div>
+    <div class="status">
+      <h6> SIC Approval </h6>
+    </div>
+  </li>
+  <li class="li">
+    <div class="timestamp">
+      <span class="author">PAM Admin</span>
+      <span class="date">TBD<span>
+    </div>
+    <div class="status">
+      <h6> Shift Completed </h6>
+    </div>
+  </li>
+ </ul>      
 			
-		<ul class="cd-timeline-navigation">
-			<li><a href="#0" class="prev inactive">Prev</a></li>
-			<li><a href="#0" class="next">Next</a></li>
-		</ul> <!-- .cd-timeline-navigation -->
-	</div> <!-- .timeline -->
+		<!-- .cd-timeline-navigation -->
+	           <!-- .timeline -->
 
 	
-</section>
+
 	
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-		  
-		  	  
+	
+	
+
 		  <h2>Idosos</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
@@ -200,16 +219,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-
+   
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
-  
+ 
   
   </body>
 </html>
