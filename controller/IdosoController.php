@@ -30,10 +30,10 @@
 			//$_SESSION['idoso'];
 			//$idoso['nome']=$_POST["nome"];
 			$prescricoes = $this->model -> agenda(1);
-			var_dump($prescricoes);
+			
 			$aux= 0;
 			while ($aux<sizeof($prescricoes)){
-				echo $aux;
+				
 			$atual = new DateTime;
 			$frequencia = $prescricoes[$aux]-> frequencia_prescricao;
 			$atual = $atual->format('d-m-Y H:i:s');
@@ -58,6 +58,7 @@
 			$prescricoes[$aux]-> horas = $horas;
 			$aux++;
 			}
+			require '../view/agenda.html';
 			//$this-> view -> render('agenda', $prescricoes);
 		}
 		

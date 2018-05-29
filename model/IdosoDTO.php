@@ -11,10 +11,14 @@
 			echo $e -> getMessage();	
 		}
 				
-		$buscarInformacao = $pdo->prepare("SELECT * FROM `prescricao` 
-											WHERE registro_idoso=:registro_idoso
-											AND (`data_inicio` BETWEEN CURDATE() 
-											AND DATE_ADD(CURDATE(), INTERVAL 7 DAY) 
+		$buscarInformacao = $pdo->prepare("SELECT `tipo_prescricao`, `permanente_prescricao`,
+											`nome_idoso`, `data_inicio`, `dias_prescricao`,
+											`frequencia_prescricao`, `descricao_prescricao`, 
+											`nome_medicamento` FROM `prescricao`
+											INNER JOIN `medicamentos` ON `medicamento` = `id_medicamento`
+											INNER JOIN `idosos` ON `idoso` = `registro_idoso` 
+											WHERE `registro_idoso`=:registro_idoso 
+											AND (`data_inicio` BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
 											OR `permanente_prescricao`=:permanente_prescricao)");
 		$buscarInformacao-> bindValue(":registro_idoso", $registro, PDO:: PARAM_INT);
 		$buscarInformacao-> bindValue(":permanente_prescricao", 1, PDO:: PARAM_INT);
