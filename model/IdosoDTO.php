@@ -4,16 +4,20 @@
 //CLASSE DTO DE BUSCA E INSERÇÃO DE IDOSOS NO BANCO
 	class IdosoDTO{
 
-		public function getIdoso($registro){
+		public function agenda($registro){
 			try{
 			$pdo =new PDO("mysql:host=localhost;dbname=bd_shared_care","root","");
 		} catch(PDOException $e){
 			echo $e -> getMessage();	
 		}
 				
-		$buscarInformacao = $pdo->prepare("SELECT  registro_idoso, nome_idoso, data_nascimento_idoso, doenca_principal 
-											FROM idosos WHERE registro_idoso=:registro");
-		$buscarInformacao-> bindValue(":registro", $registro, PDO:: PARAM_INT); 
+		$buscarInformacao = $pdo->prepare("SELECT * FROM `prescricao` 
+											WHERE registro_idoso=:registro_idoso
+											AND (`data_inicio` BETWEEN CURDATE() 
+											AND DATE_ADD(CURDATE(), INTERVAL 7 DAY) 
+											OR `permanente_prescricao`=:permanente_prescricao)");
+		$buscarInformacao-> bindValue(":registro_idoso", $registro, PDO:: PARAM_INT);
+		$buscarInformacao-> bindValue(":permanente_prescricao", 1, PDO:: PARAM_INT);
 		$buscarInformacao -> execute();
 		$resultado = $buscarInformacao -> fetchAll(PDO::FETCH_OBJ);
 		
@@ -43,18 +47,15 @@
 			echo $e -> getMessage();	
 		}
 				
-		$inserir = $pdo->prepare("INSERT INTO idosos(nome, cpf, rg, data_nascimento, nacionalidade,
-								 foto, nome_mae, nome_pai)
-									VALUES(:nome, :cpf, :rg, :data_nascimento, :nacionalidade, :foto,
-									:nome_mae, :nome_pai)");
-		$inserir-> bindValue(":nome", $idoso ["nome"], PDO:: PARAM_STR); 
-		$inserir-> bindValue(":cpf", $idoso ["cpf"],  PDO:: PARAM_STR); 
-		$inserir-> bindValue(":rg", $idoso ["rg"],  PDO:: PARAM_STR); 
-		$inserir-> bindValue(":data_nascimento", $idoso ["data_nascimento"]); 
-		$inserir-> bindValue(":nacionalidade",$idoso["nacionalidade"], PDO:: PARAM_STR); 
-		$inserir-> bindValue(":foto", $idoso ["foto"], PDO:: PARAM_STR); 
-		$inserir-> bindValue(":nome_mae", $idoso ["nome_mae"], PDO:: PARAM_STR); 
-		$inserir-> bindValue(":nome_pai", $idoso ["nome_pai"], PDO:: PARAM_STR); 
+		$inserir = $pdo->prepare("INSERT INTO idosos(nome_idoso, cpf_idoso, rg_idoso,
+									data_nascimento_idoso, doenca_principal)
+									VALUES(:nome_idoso, :cpf_idoso, :rg_idoso, :data_nascimento_idoso,
+											:doenca_principal)");
+		$inserir-> bindValue(":nome_idoso", $idoso ["nome"], PDO:: PARAM_STR); 
+		$inserir-> bindValue(":cpf_idoso", $idoso ["cpf"],  PDO:: PARAM_STR); 
+		$inserir-> bindValue(":rg_idoso", $idoso ["rg"],  PDO:: PARAM_STR); 
+		$inserir-> bindValue(":data_nascimento_idoso", $idoso ["data_nascimento"]); 
+		$inserir-> bindValue(":doenca_principal",$idoso["principal"], PDO:: PARAM_INT); 
 		$inserir-> execute();
 		}	
 	

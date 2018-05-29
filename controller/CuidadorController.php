@@ -1,27 +1,24 @@
 <?php
 
-	include '../model/CuidadorDTO.php';
-	$aux= new CadastroCuidadorController;
-	$aux->cadastrarCuidador();
 	class CadastroCuidadorController{
 		
 		
 		 function __construct() {
-			
-		
+				
 	     }
 		
 	
 	
-		function novoCuidador(){
+		function inserir(){
 		
-			include("/sharedCare/model/CadastroCuidador.html");
+			include("/sharedCare/view.html");
 		
 		}
 		
-		function cadastrarCuidador(){
-			
-			
+		function cadastrar(){
+			include '../model/CuidadorDTO.php';
+			$aux= new CadastroCuidadorController;
+			$aux->cadastrarCuidador();
 			$cpf=$_POST["cpf"];
 			$email=$_POST["email"];
 			$cuidadorDTO = new CuidadorDTO;
